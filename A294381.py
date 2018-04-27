@@ -1,5 +1,6 @@
 from utils import write_b_file, data_section
 
+
 def A294381(n):
     a = [1, 3]
     b = [2]
