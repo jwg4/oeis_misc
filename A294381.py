@@ -1,4 +1,4 @@
-from utils import write_b_file
+from utils import write_b_file, data_section
 
 def A294381(n):
     a = [1, 3]
@@ -15,4 +15,4 @@ def A294381(n):
 
 
 if __name__ == '__main__':
-    write_b_file("data/A294381.txt", A294381(50))
+    print(data_section(A294381(30)))
