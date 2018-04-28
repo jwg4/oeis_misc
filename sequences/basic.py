@@ -2,6 +2,7 @@ def naturals():
     for i in nonnegative_integers():
         yield i + 1
 
+
 def nonnegative_integers():
     i = 0
     while True:
