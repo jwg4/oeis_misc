@@ -1,4 +1,4 @@
-from basic import nonnegative_integers
+from .basic import nonnegative_integers
 
 
 def pentagonal_numbers():

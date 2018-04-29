@@ -1,3 +1,3 @@
-from simple import A000326
+from .simple import A000326
 
-from A294381 import A294381
+from .A294381 import A294381
