@@ -1,6 +1,3 @@
-from utils import write_b_file, data_section
-
-
 def A294381(n):
     a = [1, 3]
     b = [2]
@@ -13,7 +10,3 @@ def A294381(n):
         if len(b) < n + 2:
             for i in range(a[m-1]+1, a_):
                 b.append(i)
-
-
-if __name__ == '__main__':
-    print(data_section(A294381(30)))
