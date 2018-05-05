@@ -1,5 +1,4 @@
 module Main where
 
-main :: IO ()
-main = do
-  putStrLn "hello world"
+naturals :: [Integer]
+naturals = 1 : map (+ 1) naturals
