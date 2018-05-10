@@ -21,3 +21,11 @@ a225593 = int_n_over_e
 
 one_minus_one_over_e_times_n :: [Integer]
 one_minus_one_over_e_times_n = zipWith (-) naturals int_n_over_e
+
+square_numbers :: [Integer]
+square_numbers = map square naturals
+  where square x = x * x
+
+triangle_numbers :: [Integer]
+triangle_numbers = map triangle naturals
+  where triangle x = x * (x + 1) / 2
