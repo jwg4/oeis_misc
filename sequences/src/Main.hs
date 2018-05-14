@@ -33,5 +33,5 @@ triangle_numbers = map triangle naturals
   where triangle x = toInteger $ x * (x + 1) / 2
 
 xor_triangles :: [Int]
-xor_triangles = map xor_triangle naturals
+xor_triangles = map (xor_triangle . fromIntegral) naturals
   where xor_triangle x = foldl xor 0 $ [1..x]
