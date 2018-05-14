@@ -1,5 +1,7 @@
 module Main where
 
+import Data.Bits(xor)
+
 main :: IO ()
 main = do
   putStrLn $ show $ take 50 naturals
@@ -28,4 +30,8 @@ square_numbers = map square naturals
 
 triangle_numbers :: [Integer]
 triangle_numbers = map triangle naturals
-  where triangle x = x * (x + 1) / 2
+  where triangle x = toInteger $ x * (x + 1) / 2
+
+xor_triangles :: [Int]
+xor_triangles = map xor_triangle naturals
+  where xor_triangle x = foldl xor 0 $ [1..x]
