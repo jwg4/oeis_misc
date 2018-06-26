@@ -1,6 +1,6 @@
-def naturals():
+def naturals(start=1):
     for i in nonnegative_integers():
-        yield i + 1
+        yield i + start
 
 
 def nonnegative_integers():
