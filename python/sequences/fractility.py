@@ -111,6 +111,8 @@ def harmonic_fractility(n):
     """
     >>> harmonic_fractility(11)
     3
+    >>> harmonic_fractility(22)
+    3
     """
     limits = [
         normalize_tuple(limit(Fraction(m, n)))
