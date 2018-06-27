@@ -79,16 +79,6 @@ def limit(x):
     return tuple(l)
 
 
-def rotate_tuple(t, k):
-    """
-    >>> rotate_tuple((1, 2, 3), 0)
-    (1, 2, 3)
-    >>> rotate_tuple((1, 2, 3), 2)
-    (3, 1, 2)
-    """
-    return t[k:] + t[0:k]
-
-
 def normalize_tuple(t):
     """
     >>> normalize_tuple((3, 1, 2))
@@ -96,7 +86,7 @@ def normalize_tuple(t):
     >>> normalize_tuple((1, 2, 1))
     (1, 1, 2)
     """
-    l = [ rotate_tuple(t, i) for i in range(0, len(t)) ]
+    l = [ (t[k:] + t[0:k]) for k in range(0, len(t)) ]
     return min(l)
 
 
