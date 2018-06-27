@@ -1,13 +1,17 @@
-def b_file_format(values):
-    i = 0
+import logging
+
+
+def b_file_format(values, start=0):
+    i = start
     for n in values:
         yield "%d %d\n" % (i, n)
         i = i + 1
 
 
-def write_b_file(name, values):
+def write_b_file(name, values, start=0):
     with open(name, 'w') as f:
-        for line in b_file_format(values):
+        for line in b_file_format(values, start):
+            logging.info("Writing %s to b-file" % (line, ))
             f.write(line)
 
 
