@@ -76,18 +76,8 @@ def limit(x):
         l.append(n)
         if x == m:
             break
-    return tuple(l)
-
-
-def normalize_tuple(t):
-    """
-    >>> normalize_tuple((3, 1, 2))
-    (1, 2, 3)
-    >>> normalize_tuple((1, 2, 1))
-    (1, 1, 2)
-    """
-    l = [ (t[k:] + t[0:k]) for k in range(0, len(t)) ]
-    return min(l)
+    rotations = [ (l[k:] + l[0:k]) for k in range(0, len(l)) ]
+    return tuple(min(rotations))
 
 
 # Find the limiting cycle for all fractions m/n with 0 < m < n
@@ -102,7 +92,7 @@ def harmonic_fractility(n):
     3
     """
     limits = [
-        normalize_tuple(limit(Fraction(m, n)))
+        limit(Fraction(m, n))
         for m in range(1, n)
     ]
     return len(set(limits))
