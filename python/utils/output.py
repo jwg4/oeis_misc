@@ -29,11 +29,11 @@ def data_section(values):
     a = ss[0]
     c = len(a)
     for s in ss[1:]:
-        if c + len(s) < 71:
-            a = a + "," + s
-            c = c + len(s) + 1
+        if c + len(s) < 81:
+            a = a + ", " + s
+            c = c + len(s) + 2
         else:
             l.append(a)
             a = s
             c = len(s)
-    return "\n".join(l)
+    return ",\n".join(l)
