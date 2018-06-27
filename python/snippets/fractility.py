@@ -8,12 +8,6 @@ def sequence(a, b):
         a = (a * (n+1) - b) * n
 
 
-def display_seq(a, b):
-    pairs = zip(range(1, 30), sequence(a, b))
-    values = [ str(x[1]) for x in pairs ]
-    print(", ".join(values))
-
-
 def reciprocal(x):
     """
     Just a helper function for calculation with fractions.
@@ -122,8 +116,3 @@ def harmonic_fractility(n):
         for m in range(1, n)
     ]
     return len(set(limits))
-
-
-if __name__ == '__main__':
-    for d in range(2, 12):
-        print(harmonic_fractility(d))
