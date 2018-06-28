@@ -24,16 +24,14 @@ def chunks(s, n):
 
 
 def data_section(values):
+    """
+        >>> data_section(range(0, 260))
+        '0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67'
+    """
     ss = [str(v) for v in values]
-    l = []
-    a = ss[0]
-    c = len(a)
-    for s in ss[1:]:
-        if c + len(s) < 81:
-            a = a + ", " + s
-            c = c + len(s) + 2
-        else:
-            l.append(a)
-            a = s
-            c = len(s)
-    return ",\n".join(l)
+    l = len(ss[0])
+    i = 1
+    while l < 260:
+        l = l + len(ss[i]) + 2
+        i = i + 1
+    return ", ".join(ss[:i])
