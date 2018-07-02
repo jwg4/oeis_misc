@@ -1,13 +1,11 @@
+module NumberSpec where
+
 import Test.Hspec        (Spec, it, shouldBe, describe)
-import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
 
 import Number (primes, divides)
 
-main :: IO ()
-main = hspecWith defaultConfig {configFastFail = True} specs
-
-specs :: Spec
-specs = do
+spec :: Spec
+spec = do
   describe "primes" $ do
     it "first five primes" $
           (take 5 primes) `shouldBe` [2, 3, 5, 7, 11]
