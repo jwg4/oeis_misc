@@ -1,11 +1,16 @@
 import Test.Hspec        (Spec, it, shouldBe)
 import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
 
-import Number (primes)
+import Number (primes, divides)
 
 main :: IO ()
 main = hspecWith defaultConfig {configFastFail = True} specs
 
 specs :: Spec
-specs = it "hello" $
+specs = do
+
+    it "first five primes" $
           (take 5 primes) `shouldBe` [2, 3, 5, 7, 11]
+
+    it "basic divisibility test" $
+          (divides 4 2) `shouldBe` True
