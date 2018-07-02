@@ -11,7 +11,7 @@ spec = do
           (take 5 primes) `shouldBe` [2, 3, 5, 7, 11]
 
     it "hundredth prime" $
-        last (take 100 primes) `shouldBe` 541
+        primes!!99 `shouldBe` 541
 
   describe "divides" $ do
     it "basic divisibility test" $
