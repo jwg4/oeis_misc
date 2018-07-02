@@ -26,9 +26,9 @@ library
   build-depends:
       base
   exposed-modules:
-      Number, Transform, Catalogue
+      Number, Transform, Catalogue, Summand
   other-modules:
-      Basic
+      Basic, Simple
   default-language: Haskell2010
 
 test-suite test
