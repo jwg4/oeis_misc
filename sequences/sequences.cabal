@@ -26,7 +26,7 @@ library
   build-depends:
       base
   exposed-modules:
-      Number, Transform
+      Number, Transform, Catalogue
   other-modules:
       Basic
   default-language: Haskell2010
@@ -41,5 +41,5 @@ test-suite test
     , base
     , hspec
   other-modules:
-      NumberSpec, TransformSpec
+      NumberSpec, TransformSpec, CatalogueSpec
   default-language: Haskell2010
