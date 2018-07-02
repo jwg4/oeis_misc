@@ -1,6 +1,6 @@
 module NumberSpec where
 
-import Test.Hspec        (Spec, it, shouldBe, describe)
+import Test.Hspec (Spec, it, shouldBe, describe)
 
 import Number (primes, divides)
 
