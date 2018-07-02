@@ -14,3 +14,6 @@ specs = do
 
     it "basic divisibility test" $
           (divides 4 2) `shouldBe` True
+
+    it "basic divisibility test 2" $
+          (divides 4 3) `shouldBe` False
