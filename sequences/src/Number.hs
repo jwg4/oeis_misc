@@ -7,3 +7,6 @@ primes = 2 : 3 : filter (\a -> all (not . divides a) (takeWhile (\x -> x <= a `d
 
 divides :: Integer -> Integer -> Bool
 divides a b = a `mod` b == 0
+
+a000040 :: [Integer]
+a000040 = primes
