@@ -1,5 +1,6 @@
 module A003815 where
 
+import Data.Bits(xor)
 import Basic(naturals)
 
 xor_triangles :: [Int]

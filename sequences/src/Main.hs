@@ -1,8 +1,9 @@
 module Main where
 
-import Data.Bits(xor)
-import Simple(pentagonal_numbers)
+import Data.List(intersperse)
+import Catalogue(a003679)
+import Output(data_format)
 
 main :: IO ()
 main = do
-  putStrLn $ show $ take 50 pentagonal_numbers
+  putStrLn $ data_format a003679
