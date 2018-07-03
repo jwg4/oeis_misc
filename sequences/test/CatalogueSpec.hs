@@ -2,7 +2,7 @@ module CatalogueSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe, pending)
 
-import Catalogue (a000040, a003679, a117065)
+import Catalogue (a000027, a000040, a003679, a117065)
 
 atLeast :: Int -> [a] -> Bool
 atLeast 0 _ = True
@@ -14,6 +14,12 @@ check a b = all id $ zipWith (==) a b
 
 spec :: Spec
 spec = do
+  describe "a000027" $ do
+    it "sequence exists" $
+        atLeast 1 a000027
+    it "values from OEIS" $
+        check [1, 2, 3, 4, 5] a000027
+
   describe "a000040" $ do
     it "sequence exists" $
         atLeast 1 a000040

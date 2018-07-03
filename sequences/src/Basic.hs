@@ -6,6 +6,9 @@ _sequence start = start : map (+ 1) (_sequence start)
 naturals :: [Integer]
 naturals = _sequence 1
 
+a000027 :: [Integer]
+a000027 = naturals
+
 nonnegative_integers :: [Integer]
 nonnegative_integers = _sequence 0
 
