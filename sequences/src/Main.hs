@@ -1,9 +1,8 @@
 module Main where
 
-import Data.List(intersperse)
-import Catalogue(a003679)
-import Output(data_format)
+import Summand(check_a003679)
+import Basic(up_to)
 
 main :: IO ()
 main = do
-  putStrLn $ data_format a003679
+  putStrLn $ show $ check_a003679 $ up_to 1000000
