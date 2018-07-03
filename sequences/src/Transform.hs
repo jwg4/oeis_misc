@@ -7,4 +7,3 @@ increasing_intersect (x:xs) (y:ys)
     | x == y = x:(increasing_intersect xs ys)
     | x < y = increasing_intersect xs (y:ys)
     | x > y = increasing_intersect (x:xs) ys
-
