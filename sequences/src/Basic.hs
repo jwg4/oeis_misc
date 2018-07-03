@@ -17,3 +17,7 @@ nonnegative_integers = _sequence 0
 
 numbers :: [Integer]
 numbers = nonnegative_integers
+
+a001477 :: [Integer]
+a001477 = numbers
+
