@@ -17,3 +17,6 @@ pentagon x = x * (3 * x - 1) `div` 2
 
 pentagonal_numbers :: [Integer]
 pentagonal_numbers = map pentagon numbers
+
+a000326 :: [Integer]
+a000326 = pentagonal_numbers
