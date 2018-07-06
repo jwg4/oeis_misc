@@ -1,8 +1,8 @@
 module Main where
 
-import Summand(check_a003679)
-import Basic(up_to)
+import Partition(a062515)
+import Output(data_format)
 
 main :: IO ()
 main = do
-  putStrLn $ show $ check_a003679 $ up_to 1000000
+  putStrLn $ data_format a062515
