@@ -1,8 +1,8 @@
 module Main where
 
-import Summand(check_a003679)
-import Basic(up_to)
+import Partition(a062515)
+import Output(data_format, file_output)
 
 main :: IO ()
 main = do
-  putStrLn $ show $ check_a003679 $ up_to 1000000
+  writeFile "data/b062515.txt" $ file_output 0 (take 1001 a062515)

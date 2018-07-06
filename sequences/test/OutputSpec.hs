@@ -2,7 +2,7 @@ module OutputSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe, pending)
 
-import Output (data_format)
+import Output (data_format, file_output)
 
 test_sequence :: [Integer]
 test_sequence = 1 : test_sequence
@@ -23,3 +23,7 @@ spec = do
         data_format test_sequence_2
         `shouldBe` test_output_2
 
+  describe "file_output" $ do
+    it "short sequence" $
+        file_output 0 [1, 2, 3]
+        `shouldBe` "0 1\n1 2\n2 3\n"
