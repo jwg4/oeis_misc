@@ -1,7 +1,7 @@
 module Partition where
 
 import Basic(numbers)
-import Number(primes)
+import Number(primes, primorials)
 
 partitions :: [[Integer]]
 partitions = concat $ map (partitions_of_n) numbers
@@ -20,10 +20,16 @@ a063008 = map prime_signature partitions
 prime_signature :: [Integer] -> Integer
 prime_signature p = product $ zipWith (^) primes p
 
-a062515 :: [Integer]
-a062515 = map prime_signature $ filter compare_first_second partitions
+a062515_bis :: [Integer]
+a062515_bis = map prime_signature $ filter compare_first_second partitions
     where
   compare_first_second p
         | length p == 0 = True
         | length p == 1 = False
         | otherwise = p!!0 == p!!1
+
+a062515 :: [Integer]
+a062515 = map primorial_signature partitions
+
+primorial_signature :: [Integer] -> Integer
+primorial_signature p = product $ map ((drop 1 primorials) !!) (map fromIntegral p)
