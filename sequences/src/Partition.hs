@@ -19,3 +19,11 @@ a063008 = map prime_signature partitions
 
 prime_signature :: [Integer] -> Integer
 prime_signature p = product $ zipWith (^) primes p
+
+a062515 :: [Integer]
+a062515 = map prime_signature $ filter compare_first_second partitions
+    where
+  compare_first_second p
+        | length p == 0 = True
+        | length p == 1 = False
+        | otherwise = p!!0 == p!!1
