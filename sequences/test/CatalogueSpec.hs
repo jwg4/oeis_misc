@@ -3,8 +3,8 @@ module CatalogueSpec where
 import Test.Hspec (Spec, it, shouldBe, describe, pending)
 
 import Catalogue (
-    a000027, a000040, a000326, a001477, a003679,
-    a062515, a063008, a117065
+    a000027, a000040, a000326, a001477, a002110,
+    a003679, a062515, a063008, a117065
   )
 
 atLeast :: Int -> [a] -> Bool
@@ -34,6 +34,10 @@ spec = do
   describe "a001477" $ do
     it "sequence exists" $
         atLeast 1 a001477
+
+  describe "a002110" $ do
+    it "sequence exists" $
+        atLeast 1 a002110
 
   describe "a003679" $ do
     it "sequence exists" $

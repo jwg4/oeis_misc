@@ -2,7 +2,7 @@ module NumberSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe)
 
-import Number (primes, divides)
+import Number (primes, divides, primorials)
 
 spec :: Spec
 spec = do
@@ -19,3 +19,6 @@ spec = do
 
     it "basic divisibility test 2" $
           (divides 4 3) `shouldBe` False
+
+    it "primorials" $ 
+        (primorials!!4) `shouldBe` 210

@@ -1,5 +1,7 @@
 module Number where
 
+import Data.List(inits)
+
 import Basic(_sequence)
 
 primes :: [Integer]
@@ -10,3 +12,9 @@ divides a b = a `mod` b == 0
 
 a000040 :: [Integer]
 a000040 = primes
+
+primorials :: [Integer]
+primorials = map product $ inits primes
+
+a002110 :: [Integer]
+a002110 = primorials
