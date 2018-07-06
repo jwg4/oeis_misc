@@ -26,7 +26,7 @@ library
   build-depends:
       base, split
   exposed-modules:
-      Number, Transform, Catalogue, Summand, Output, A117065, Basic
+      Number, Transform, Catalogue, Summand, Output, A117065, Basic, Partition
   other-modules:
       Simple
   default-language: Haskell2010
@@ -41,5 +41,5 @@ test-suite test
     , base
     , hspec
   other-modules:
-      NumberSpec, TransformSpec, CatalogueSpec, OutputSpec, BasicSpec
+      NumberSpec, TransformSpec, CatalogueSpec, OutputSpec, BasicSpec, PartitionSpec
   default-language: Haskell2010
