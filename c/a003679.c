@@ -56,6 +56,10 @@ void print_values(char* sieve, int N) {
 
 int main(int argc, char** argv) {
     int LIMIT = 1000000;
+    if(argc>=2) {
+        LIMIT = atoi(argv[1]);
+        printf("Using %d as the limit of the search", LIMIT);
+    }
     char* sieve = (char * )calloc(LIMIT, sizeof(llT));
     llT* values = (llT*)malloc(sizeof(llT));
     llT* pairs= (llT*)malloc(sizeof(llT));
