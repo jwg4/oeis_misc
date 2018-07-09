@@ -48,6 +48,13 @@ void sieve_pairs(llT* src1, llT* src2, char* dest) {
     }
 }
 
+void print_values(char* sieve) {
+    for (int i = 0; i < LIMIT; i++) {
+        if (sieve[i] == 0) {
+            printf("%d\n", i);
+        }
+    }
+}
 int main(int argc, char** argv) {
     char* sieve = (char * )calloc(LIMIT, sizeof(llT));
     llT* values = (llT*)malloc(sizeof(llT));
@@ -56,6 +63,7 @@ int main(int argc, char** argv) {
     load_values(values);
     load_pairs(values, values, pairs);
     sieve_pairs(values, pairs, sieve);
+    print_values(sieve);
 
     return 0;
 }
