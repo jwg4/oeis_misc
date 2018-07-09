@@ -10,7 +10,9 @@ spec = do
     it "small input number" $
           digits 12345 `shouldBe` [1, 2, 3, 4, 5]
 
-
   describe "contains" $ do
     it "a number contains itself" $
         contains 45 45 `shouldBe` True
+
+    it "27 does not contain 45" $
+        contains 27 45 `shouldBe` False
