@@ -35,14 +35,27 @@ void load_pairs(llT* src1, llT* src2, llT* dest) {
         }
     }
 }
+
+
+void sieve_pairs(llT* src1, llT* src2, char* dest) {
+    for (llT* s1 = src1; s1->next != 0; s1 = s1->next) {
+        for (llT* s2 = src2; s2->next != 0; s2 = s2->next) {
+            int sum = s1->value + s2->value;
+            if (sum < LIMIT) {
+                dest[sum] = 1;
+            }
+        }
+    }
+}
+
 int main(int argc, char** argv) {
-    char sieve[LIMIT];
+    char* sieve = (char * )calloc(LIMIT, sizeof(llT));
     llT* values = (llT*)malloc(sizeof(llT));
     llT* pairs= (llT*)malloc(sizeof(llT));
-    llT* triplets = (llT*)malloc(sizeof(llT));
     
     load_values(values);
     load_pairs(values, values, pairs);
+    sieve_pairs(values, pairs, sieve);
 
     return 0;
 }
