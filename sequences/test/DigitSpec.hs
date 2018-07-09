@@ -2,7 +2,7 @@ module DigitSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe)
 
-import Digit (digits, contains)
+import Digit (digits, contains, searchForExtension)
 
 spec :: Spec
 spec = do
@@ -16,3 +16,10 @@ spec = do
 
     it "27 does not contain 45" $
         contains 27 45 `shouldBe` False
+
+    it "2415 does contain 45" $
+        contains 2415 45 `shouldBe` True
+
+  describe "searchForExtension" $ do
+    it "next number bigger than 4" $ 
+        searchForExtension [1..] 4 `shouldBe` 14
