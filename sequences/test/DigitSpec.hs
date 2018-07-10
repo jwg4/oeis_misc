@@ -10,6 +10,16 @@ spec = do
     it "small input number" $
           digits 12345 `shouldBe` [1, 2, 3, 4, 5]
 
+  describe "listContains" $ do
+    it "empty list does not contain [[]]" $ do
+        listContains [] [[]] `shouldBe` False
+
+    it "empty list contains empty list" $ do
+        listContains [] [[]] `shouldBe` True
+
+    it "a list contains empty list" $ do
+        listContains [1, 2, 3] [] `shouldBe` True
+
   describe "contains" $ do
     it "a number contains itself" $
         contains 45 45 `shouldBe` True

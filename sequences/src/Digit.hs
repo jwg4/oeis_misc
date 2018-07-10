@@ -11,7 +11,7 @@ contains :: Integer -> Integer -> Bool
 contains x y = listContains (digits x) (digits y)
 
 listContains :: Eq a => [a] -> [a] -> Bool
-listContains [] [] = True
+listContains _ [] = True
 listContains [] _ = False
 listContains (x:xs) (y:ys)
     | x == y    = listContains xs ys
