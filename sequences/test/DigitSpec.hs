@@ -2,7 +2,7 @@ module DigitSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe)
 
-import Digit (digits, contains, searchForExtension)
+import Digit (digits, contains, listContains, searchForExtension)
 
 spec :: Spec
 spec = do
@@ -12,10 +12,10 @@ spec = do
 
   describe "listContains" $ do
     it "empty list does not contain [[]]" $ do
-        listContains [] [[]] `shouldBe` False
+        listContains [] ([[]]::[[Integer]]) `shouldBe` False
 
     it "empty list contains empty list" $ do
-        listContains [] [[]] `shouldBe` True
+        listContains [] ([]::[Integer]) `shouldBe` True
 
     it "a list contains empty list" $ do
         listContains [1, 2, 3] [] `shouldBe` True
