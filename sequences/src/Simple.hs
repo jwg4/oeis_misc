@@ -2,6 +2,9 @@ module Simple where
 
 import Basic(numbers)
 
+nth_powers :: Integer -> [Integer]
+nth_powers n = map (^ n) numbers
+
 square_numbers :: [Integer]
 square_numbers = map square numbers
   where square x = x * x
