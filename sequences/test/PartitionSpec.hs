@@ -2,7 +2,7 @@ module PartitionSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe)
 
-import Partition(partitions, a062515, a316532, n_complete_partitions, is_n_complete, is_subpartition_of, removed_points)
+import Partition(partitions, a062515, a316532, n_complete_partitions, is_n_complete, is_subpartition_of, removed_points, n_partitions_of)
 
 spec :: Spec
 spec = do
@@ -17,6 +17,10 @@ spec = do
   describe "n-complete partitions" $ do
     it "n = 3, check some values" $
         (take 8 (n_complete_partitions 3)) `shouldBe` [0, 0, 1, 2, 2, 3, 5, 6]
+
+  describe "n_partitions_of m" $ do
+    it "3-partitions of 5" $
+        (n_partitions_of 3 5) `shouldBe` [[3, 1, 1], [2, 2, 1]]
 
   describe "is_n_complete" $ do
     it "(2, 1, 1, 1) is 3-complete" $
