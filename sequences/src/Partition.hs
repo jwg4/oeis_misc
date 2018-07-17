@@ -6,10 +6,10 @@ import Basic(numbers)
 import Number(primes, primorials)
 
 partitions :: [[Integer]]
-partitions = concat $ map (partitions_of_n) numbers
+partitions = concat $ map (partitions_of) numbers
 
-partitions_of_n :: Integer -> [[Integer]]
-partitions_of_n n = partitions_at_most n n
+partitions_of :: Integer -> [[Integer]]
+partitions_of n = partitions_at_most n n
 
 partitions_at_most :: Integer -> Integer -> [[Integer]]
 partitions_at_most _ 0 = [[]]
