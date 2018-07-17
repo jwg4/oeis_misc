@@ -4,7 +4,8 @@ import Test.Hspec (Spec, it, shouldBe, describe, pending)
 
 import Catalogue (
     a000027, a000040, a000326, a001477, a002110,
-    a003679, a062515, a063008, a117065, a179824
+    a003679, a062515, a063008, a117065, a179824,
+    a316532
   )
 
 atLeast :: Int -> [a] -> Bool
@@ -68,3 +69,9 @@ spec = do
         atLeast 1 a179824
     it "values from OEIS" $
         check [2, 24, 108, 320] a179824
+
+  describe "a316532" $ do
+    it "sequence exists" $
+        atLeast 1 a316532
+    it "values from OEIS" $
+        check [1, 6, 30, 36, 210, 180, 2310, 216] a316532
