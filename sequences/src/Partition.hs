@@ -39,6 +39,18 @@ primorial_signature p = product $ map ((drop 1 primorials) !!) (map fromIntegral
 n_complete_partitions :: Integer -> [Integer]
 n_complete_partitions = (map (fromIntegral . length)) . all_n_complete_partitions
 
+a126796 :: [Integer]
+a126796 = n_complete_partitions 2
+
+a236970 :: [Integer]
+a236970 = n_complete_partitions 3
+
+a236971 :: [Integer]
+a236971 = n_complete_partitions 4
+
+a236972 :: [Integer]
+a236972 = n_complete_partitions 5
+
 all_n_complete_partitions :: Integer -> [[[Integer]]]
 all_n_complete_partitions n = map ((filter (is_n_complete n)) . partitions_of) naturals
 
