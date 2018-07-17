@@ -1,5 +1,7 @@
 module Partition where
 
+import Data.List(inits, tails)
+
 import Basic(numbers)
 import Number(primes, primorials)
 
@@ -33,3 +35,25 @@ a062515 = map primorial_signature partitions
 
 primorial_signature :: [Integer] -> Integer
 primorial_signature p = product $ map ((drop 1 primorials) !!) (map fromIntegral p)
+
+n_complete_partitions :: Integer -> [Integer]
+n_complete_partitions = (map (fromIntegral . length)) . all_n_complete_partitions
+
+all_n_complete_partitions :: Integer -> [[Integer]]
+all_n_complete_partitions n = filter (is_n_complete n) partitions
+
+is_n_complete :: Integer -> [Integer] -> Bool
+is_n_complete n p = True
+
+is_subpartition_of :: [Integer] -> [Integer] -> Bool
+is_subpartition_of [] [] = True
+is_subpartition_of p1 p2 = any (uncurry (is_front_subpartition_of p1)) (removed_points p2)
+
+is_front_subpartition_of :: [Integer] -> Integer -> [Integer] -> Bool
+is_front_subpartition_of (p:ps) x t
+    | p == x = is_subpartition_of ps t
+    | p < x  = is_subpartition_of ps (x-p:t)
+    | p > x  = False
+
+removed_points :: [a] -> [(a, [a])]
+removed_points l = zip l (zipWith (++) (inits l) (tail (tails l)))
