@@ -2,7 +2,7 @@ module PartitionSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe)
 
-import Partition(partitions, a062515_bis)
+import Partition(partitions, a062515, a316532)
 
 spec :: Spec
 spec = do
@@ -10,6 +10,6 @@ spec = do
     it "first partition" $
           partitions!!0 `shouldBe` []
 
-  describe "a062515_bis" $ do
+  describe "a316532" $ do
     it "values from OEIS" $
-        (take 8 a062515_bis) `shouldBe` [1, 6, 30, 36, 210, 180, 2310, 216]
+        (take 8 a316532) `shouldBe` [1, 6, 30, 36, 210, 180, 2310, 216]
