@@ -2,7 +2,7 @@ module Partition where
 
 import Data.List(inits, tails)
 
-import Basic(numbers)
+import Basic(numbers, naturals)
 import Number(primes, primorials)
 
 partitions :: [[Integer]]
@@ -39,11 +39,14 @@ primorial_signature p = product $ map ((drop 1 primorials) !!) (map fromIntegral
 n_complete_partitions :: Integer -> [Integer]
 n_complete_partitions = (map (fromIntegral . length)) . all_n_complete_partitions
 
-all_n_complete_partitions :: Integer -> [[Integer]]
-all_n_complete_partitions n = filter (is_n_complete n) partitions
+all_n_complete_partitions :: Integer -> [[[Integer]]]
+all_n_complete_partitions n = map ((filter (is_n_complete n)) . partitions_of) naturals
 
 is_n_complete :: Integer -> [Integer] -> Bool
-is_n_complete n p = True
+is_n_complete n p = ((fromIntegral (length p)) >= n) && (all (is_subpartition_of p) (n_partitions_of n (sum p)))
+
+n_partitions_of :: Integer -> Integer -> [[Integer]]
+n_partitions_of n m = filter (\p -> (fromIntegral (length p)) == n) $ partitions_of m
 
 is_subpartition_of :: [Integer] -> [Integer] -> Bool
 is_subpartition_of [] [] = True
