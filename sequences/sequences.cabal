@@ -18,7 +18,7 @@ executable sequence
   main-is:             Main.hs
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5, split
-  other-modules:       Basic, Constant, Simple, Number, Output, Catalogue, Summand, Transform, A117065, Partition
+  other-modules:       Basic, Constant, Simple, Number, Output, Catalogue, Summand, Transform, A117065, Partition, A256535
 
 library
   hs-source-dirs:
@@ -26,7 +26,7 @@ library
   build-depends:
       base, split
   exposed-modules:
-      Number, Transform, Catalogue, Summand, Output, A117065, Basic, Partition, Graph
+      Number, Transform, Catalogue, Summand, Output, A117065, Basic, Partition, Graph, A256535
   other-modules:
       Simple
   default-language: Haskell2010

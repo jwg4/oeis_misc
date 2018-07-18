@@ -13,6 +13,7 @@ module Catalogue(
     a236970,
     a236971,
     a236972,
+    a256535,
     a316532
 ) where
 
@@ -23,3 +24,4 @@ import Partition(a062515, a063008, a126796, a236970, a236971, a236972, a316532)
 import Simple(a000326)
 import Summand(a003679)
 import A117065(a117065)
+import A256535(a256535)
