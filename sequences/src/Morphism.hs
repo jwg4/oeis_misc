@@ -38,3 +38,24 @@ example_24_m 5 = 1
 
 a316344 :: [Integer]
 a316344 = map example_24_m $ generate_sequence example_24_f 0
+
+example_25_1_f :: Integer -> [Integer]
+example_25_1_f 0 = [0, 1, 1, 0]
+example_25_1_f 1 = [1, 2, 2, 1]
+example_25_1_f 2 = [2, 1, 1, 2]
+
+example_25_2_f :: Integer -> [Integer]
+example_25_2_f 0 = [0, 1, 0]
+example_25_2_f 1 = [2, 2, 2]
+example_25_2_f 2 = [2, 2, 2]
+
+example_25_m :: Integer -> Integer
+example_25_m 0 = 0
+example_25_m 1 = 0
+example_25_m 2 = 1
+
+a316345 :: [Integer]
+a316345 = map example_25_m $ generate_sequence example_25_1_f 0
+
+a316824 :: [Integer]
+a316824 = map example_25_m $ generate_sequence example_25_2_f 0
