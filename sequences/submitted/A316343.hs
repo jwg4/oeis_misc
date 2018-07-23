@@ -1,5 +1,3 @@
-module Morphism where
-
 a316343_count :: Integer -> Int
 a316343_count n = fromIntegral ((v + 1) ^ 2) where
     v
