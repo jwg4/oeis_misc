@@ -6,7 +6,7 @@ import Catalogue (
     a000027, a000040, a000326, a001477, a002110,
     a003679, a062515, a063008, a117065, a126796,
     a179824, a236970, a236971, a236972, a256535,
-    a316344, a316532
+    a316343, a316344, a316532
   )
 
 atLeast :: Int -> [a] -> Bool
@@ -83,9 +83,16 @@ spec = do
     it "values from OEIS" $
         check [0, 0, 1, 4, 5, 8, 11, 16, 19, 24, 29, 36] a256535
 
+  describe "a316343" $ do
+    it "sequence exists" $
+        atLeast 1 a316343
+    it "values from OEIS" $
+        check [0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1] a316343
+
   describe "a316344" $ do
     it "sequence exists" $
         atLeast 1 a316344
+
 
   describe "a316532" $ do
     it "sequence exists" $
