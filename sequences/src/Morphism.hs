@@ -3,10 +3,10 @@ module Morphism where
 import Basic (naturals)
 
 a316343_count :: Integer -> Int
-a316343_count n = fromIntegral ((v + 1) ^ 2) where
-    v
-        | n `mod` 2 == 1 = 0
-        | otherwise      = 1 + (n `div` 2)
+a316343_count n = fromIntegral (((v n) + 1) ^ 2) where
+    v m
+        | m `mod` 2 == 1 = 0
+        | otherwise      = 1 + (v (m `div` 2))
 
 a316343_S :: Integer -> [Integer]
 a316343_S n = 0 : (replicate (a316343_count n) 1)
