@@ -37,7 +37,7 @@ a233695_values :: [GaussianRational]
 a233695_values = nub $ concat $ iterate all_tree_values $ [GR_BCD 0 0 1]
 
 find_a233695_value :: Integer -> Integer
-find_a233695_value n = fromIntegral $ fromJust $ elemIndex (GR_BCD (0-n) 0 1) a233695_values
+find_a233695_value n = fromIntegral $ (+) 1 $ fromJust $ elemIndex (GR_BCD (0-n) 0 1) a233695_values
 
 a233695 :: [Integer]
 a233695 = map find_a233695_value naturals
