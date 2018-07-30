@@ -3,7 +3,7 @@ module Complex where
 import Data.List (elemIndex, nub)
 import Data.Maybe (fromJust)
 
-import Basic(naturals)
+import Basic(naturals, numbers)
 import Number(gcd)
 
 gcd3 :: Integer -> Integer -> Integer -> Integer
@@ -45,6 +45,12 @@ all_tree_values = concatMap three_transforms
 
 a233695_values :: [GaussianRational]
 a233695_values = nub $ concat $ iterate all_tree_values $ [GR_BCD 0 0 1]
+
+find_a233694_value :: Integer -> Integer
+find_a233694_value n = fromIntegral $ (+) 1 $ fromJust $ elemIndex (GR_BCD n 0 1) a233695_values
+
+a233694 :: [Integer]
+a233694 = map find_a233694_value numbers
 
 find_a233695_value :: Integer -> Integer
 find_a233695_value n = fromIntegral $ (+) 1 $ fromJust $ elemIndex (GR_BCD (0-n) 0 1) a233695_values
