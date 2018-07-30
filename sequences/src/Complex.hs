@@ -1,9 +1,15 @@
 module Complex where
 
+import Number(gcd)
+
+gcd3 :: Integer -> Integer -> Integer -> Integer
+gcd3 a b c = Number.gcd(Number.gcd(a, b), c)
+
 data GaussianRational = GR_BCD Integer Integer Integer deriving (Eq, Show)
 
 gr_reduce :: GaussianRational -> GaussianRational
-gr_reduce = id
+gr_reduce (GR_BCD b c d) = (GR_BCD (b `div` g) (c `div` g) (d `div` g))
+    where g = gcd3 b c d
 
 gr_increment :: GaussianRational -> GaussianRational
 gr_increment (GR_BCD b c d) = gr_reduce $ GR_BCD (b+1) c d
