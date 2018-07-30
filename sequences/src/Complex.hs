@@ -1,5 +1,9 @@
 module Complex where
 
+import Data.List (elemIndex, nub)
+import Data.Maybe (fromJust)
+
+import Basic(naturals)
 import Number(gcd)
 
 gcd3 :: Integer -> Integer -> Integer -> Integer
@@ -27,3 +31,12 @@ three_transforms x = [ gr_increment x, gr_reciprocal x, gr_times_i x]
 
 all_tree_values :: [GaussianRational] -> [GaussianRational]
 all_tree_values = concatMap three_transforms
+
+a233695_values :: [GaussianRational]
+a233695_values = nub $ concat $ iterate all_tree_values $ [GR_BCD 0 0 1]
+
+find_a233695_value :: Integer -> Integer
+find_a233695_value n = fromIntegral $ fromJust $ elemIndex (GR_BCD (0-n) 0 1) a233695_values
+
+a233695 :: [Integer]
+a233695 = map find_a233695_value naturals
