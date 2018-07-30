@@ -17,8 +17,10 @@ instance Show GaussianRational where
     show (GR_BCD b c d)
         | c == 0 && d == 1 = show b
         | b == 0 && c == 1 && d == 1 = "i"
+        | b == 0 && c == -1 && d == 1 = "-i"
         | b == 0 && d == 1 = (show c) ++ "i"
-        | d == 1           = (show b) ++ " + " ++ (show c) ++ "i"
+        | d == 1 && c < 0  = (show b) ++ " - " ++ (show (GR_BCD 0 (-c) 1))
+        | d == 1           = (show b) ++ " + " ++ (show (GR_BCD 0 c 1))
         | otherwise        = (show (GR_BCD b c 1)) ++ " / " ++ (show d)
 
 gr_reduce :: GaussianRational -> GaussianRational
