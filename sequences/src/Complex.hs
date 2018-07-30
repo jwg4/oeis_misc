@@ -11,7 +11,15 @@ gcd3 a b c
     | c < 0 = 0 - (gcd3 (0-a) (0-b) (0-c))
     | otherwise = Number.gcd(Number.gcd(a, b), c)
 
-data GaussianRational = GR_BCD Integer Integer Integer deriving (Eq, Show)
+data GaussianRational = GR_BCD Integer Integer Integer deriving (Eq)
+
+instance Show GaussianRational where
+    show (GR_BCD b c d)
+        | c == 0 && d == 1 = show b
+        | b == 0 && c == 1 && d == 1 = "i"
+        | b == 0 && d == 1 = (show c) ++ "i"
+        | d == 1           = (show b) ++ " + " ++ (show c) ++ "i"
+        | otherwise        = (show (GR_BCD b c 1)) ++ " / " ++ (show d)
 
 gr_reduce :: GaussianRational -> GaussianRational
 gr_reduce (GR_BCD b c d) = (GR_BCD (b `div` g) (c `div` g) (d `div` g))
