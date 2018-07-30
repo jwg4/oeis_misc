@@ -26,3 +26,9 @@ spec = do
   describe "gcd" $ do
     it "basic GCD test" $
         Number.gcd (10, 6) `shouldBe` 2
+
+    it "Don't choke if one of the numbers is negative." $
+        Number.gcd (10, -6) `shouldBe` 2
+
+    it "Don't return a negative number for gcd" $
+        Number.gcd (-10, -6) `shouldBe` 2

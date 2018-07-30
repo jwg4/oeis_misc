@@ -15,6 +15,7 @@ gcd (1, m) = 1
 gcd (0, m) = m
 gcd (x, y)
     | x > y = Number.gcd(y, x)
+    | x < 0 = Number.gcd(0-x, y)
     | otherwise = Number.gcd(y `mod` x, x)
 
 a000040 :: [Integer]

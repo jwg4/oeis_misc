@@ -3,7 +3,9 @@ module Complex where
 import Number(gcd)
 
 gcd3 :: Integer -> Integer -> Integer -> Integer
-gcd3 a b c = Number.gcd(Number.gcd(a, b), c)
+gcd3 a b c
+    | c < 0 = 0 - (gcd3 (0-a) (0-b) (0-c))
+    | otherwise = Number.gcd(Number.gcd(a, b), c)
 
 data GaussianRational = GR_BCD Integer Integer Integer deriving (Eq, Show)
 
