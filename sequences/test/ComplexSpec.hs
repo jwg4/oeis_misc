@@ -26,3 +26,7 @@ spec = do
   describe "find values" $ do
     it "Find 1" $ 
         find_a233695_value 1 `shouldBe` 10
+
+  describe "show GaussianRational" $ do
+    it "i" $
+        show (GR_BCD 0 1 1) `shouldBe` "i"
