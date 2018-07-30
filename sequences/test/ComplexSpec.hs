@@ -10,6 +10,9 @@ spec = do
     it "basic increment" $
           (gr_increment (GR_BCD 0 1 1)) `shouldBe` (GR_BCD 1 1 1)
 
+    it "basic increment" $
+          (gr_increment (GR_BCD 1 0 2)) `shouldBe` (GR_BCD 3 0 2)
+
   describe "reciprocal" $ do
     it "reciprocal of real integer" $
           (gr_reciprocal (GR_BCD 2 0 1)) `shouldBe` (GR_BCD 1 0 2)
