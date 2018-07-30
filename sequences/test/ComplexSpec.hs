@@ -30,3 +30,9 @@ spec = do
   describe "show GaussianRational" $ do
     it "i" $
         show (GR_BCD 0 1 1) `shouldBe` "i"
+    it "1 + i" $
+        show (GR_BCD 1 1 1) `shouldBe` "1 + i"
+    it "-i" $
+        show (GR_BCD 0 (-1) 1) `shouldBe` "-i"
+    it "1 - i / 2" $
+        show (GR_BCD 1 (-1) 2) `shouldBe` "1 - i / 2"
