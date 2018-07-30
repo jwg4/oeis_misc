@@ -21,6 +21,7 @@ gr_increment :: GaussianRational -> GaussianRational
 gr_increment (GR_BCD b c d) = gr_reduce $ GR_BCD (b+1) c d
 
 gr_reciprocal :: GaussianRational -> GaussianRational
+gr_reciprocal (GR_BCD 0 0 d) = GR_BCD 0 0 1
 gr_reciprocal (GR_BCD b c d) = gr_reduce $ GR_BCD (d*b) (0-c*d) (b*b+c*c)
 
 gr_times_i :: GaussianRational -> GaussianRational
