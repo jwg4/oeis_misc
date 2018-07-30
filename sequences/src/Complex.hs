@@ -21,3 +21,9 @@ gr_reciprocal (GR_BCD b c d) = gr_reduce $ GR_BCD (d*b) (0-c*d) (b*b+c*c)
 
 gr_times_i :: GaussianRational -> GaussianRational
 gr_times_i (GR_BCD b c d) = gr_reduce $ GR_BCD (0-c) b d
+
+three_transforms :: GaussianRational -> [GaussianRational]
+three_transforms x = [ gr_increment x, gr_reciprocal x, gr_times_i x]
+
+all_tree_values :: [GaussianRational] -> [GaussianRational]
+all_tree_values = concatMap three_transforms
