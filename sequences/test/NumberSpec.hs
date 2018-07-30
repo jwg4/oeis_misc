@@ -2,7 +2,7 @@ module NumberSpec where
 
 import Test.Hspec (Spec, it, shouldBe, describe)
 
-import Number (primes, divides, primorials)
+import Number (gcd, primes, divides, primorials)
 
 spec :: Spec
 spec = do
@@ -22,3 +22,7 @@ spec = do
 
     it "primorials" $ 
         (primorials!!4) `shouldBe` 210
+
+  describe "gcd" $ do
+    it "basic GCD test" $
+        Number.gcd (10, 6) `shouldBe` 2
