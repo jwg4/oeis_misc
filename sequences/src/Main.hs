@@ -5,5 +5,5 @@ import Output(data_format, file_output)
 
 main :: IO ()
 main = do
-  writeFile "data/b316345.txt" $ file_output 0 (take 1000 a316345)
-  writeFile "data/b316824.txt" $ file_output 0 (take 1000 a316824)
+  putStrLn $ show $ take 20 a233694
+  putStrLn $ show $ take 20 a233695
