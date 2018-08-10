@@ -5,6 +5,7 @@ import Data.Maybe (fromJust)
 
 import Basic(naturals, numbers)
 import Number(gcd)
+import Transform(increasing_union)
 
 gcd3 :: Integer -> Integer -> Integer -> Integer
 gcd3 a b c
@@ -63,3 +64,6 @@ isNegativeInteger _ = False
 
 a233695 :: [Integer]
 a233695 = map snd $ filter (isNegativeInteger . fst) $ zip a233695_values [1..] 
+
+a233696 :: [Integer]
+a233696 = increasing_union a233694 a233695

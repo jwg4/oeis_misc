@@ -12,6 +12,7 @@ module Catalogue(
     a179824,
     a233694,
     a233695,
+    a233696,
     a236970,
     a236971,
     a236972,
@@ -24,7 +25,7 @@ module Catalogue(
 ) where
 
 import Basic(a000027, a001477)
-import Complex(a233694, a233695)
+import Complex(a233694, a233695, a233696)
 import Graph(a179824)
 import Morphism(a316343, a316344, a316345, a316824)
 import Number(a000040, a002110)

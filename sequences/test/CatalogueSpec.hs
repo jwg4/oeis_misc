@@ -5,8 +5,8 @@ import Test.Hspec (Spec, it, shouldBe, describe, pending)
 import Catalogue (
     a000027, a000040, a000326, a001477, a002110,
     a003679, a062515, a063008, a117065, a126796,
-    a179824, a233695, a233694, a236970, a236971,
-    a236972, a256535,
+    a179824, a233694, a233695, a233696, a236970,
+    a236971, a236972, a256535,
     a316343, a316344, a316345, a316532, a316824
   )
 
@@ -79,6 +79,10 @@ spec = do
   describe "a233695" $ do
     it "values from OEIS" $
         check [10, 18, 30, 56, 109, 219] a233695
+
+  describe "a233696" $ do
+    it "values from OEIS" $
+        check [1, 2, 3, 5, 10, 11, 18, 23, 30, 49, 56, 102, 109] a233696
 
   describe "a236970" $ do
     it "sequence exists" $
