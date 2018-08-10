@@ -46,11 +46,14 @@ all_tree_values = concatMap three_transforms
 a233695_values :: [GaussianRational]
 a233695_values = nub $ concat $ iterate all_tree_values $ [GR_BCD 0 0 1]
 
-find_a233694_value :: Integer -> Integer
-find_a233694_value n = fromIntegral $ (+) 1 $ fromJust $ elemIndex (GR_BCD n 0 1) a233695_values
+isNonNegativeInteger :: GaussianRational -> Bool
+isNonNegativeInteger (GR_BCD b 0 1)
+    | b >= 0     = True
+    | otherwise = False
+isNonNegativeInteger _ = False
 
 a233694 :: [Integer]
-a233694 = map find_a233694_value numbers
+a233694 = map snd $ filter (isNonNegativeInteger . fst) $ zip a233695_values [1..] 
 
 isNegativeInteger :: GaussianRational -> Bool
 isNegativeInteger (GR_BCD b 0 1)
