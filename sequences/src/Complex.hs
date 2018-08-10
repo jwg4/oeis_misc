@@ -52,9 +52,6 @@ find_a233694_value n = fromIntegral $ (+) 1 $ fromJust $ elemIndex (GR_BCD n 0 1
 a233694 :: [Integer]
 a233694 = map find_a233694_value numbers
 
-find_a233695_value :: Integer -> Integer
-find_a233695_value n = fromIntegral $ (+) 1 $ fromJust $ elemIndex (GR_BCD (0-n) 0 1) a233695_values
-
 isNegativeInteger :: GaussianRational -> Bool
 isNegativeInteger (GR_BCD b 0 1)
     | b < 0     = True
@@ -62,4 +59,4 @@ isNegativeInteger (GR_BCD b 0 1)
 isNegativeInteger _ = False
 
 a233695 :: [Integer]
-a233695 = map snd $ filter (\x -> isNegativeInteger (fst x)) $ zip a233695_values [1..] 
+a233695 = map snd $ filter (isNegativeInteger . fst) $ zip a233695_values [1..] 
