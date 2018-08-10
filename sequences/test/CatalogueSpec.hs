@@ -74,11 +74,11 @@ spec = do
 
   describe "a233694" $ do
     it "values from OEIS" $
-        check [1, 2, 3, 5, 11, 23, 49, 102, 212, 443, 926, 1939] a233694
+        check [1, 2, 3, 5, 11, 23, 49, 102] a233694
 
   describe "a233695" $ do
     it "values from OEIS" $
-        check [10, 18, 30, 56, 109, 219, 450, 933, 1946, 4071] a233695
+        check [10, 18, 30, 56, 109, 219] a233695
 
   describe "a236970" $ do
     it "sequence exists" $
