@@ -16,3 +16,12 @@ increasing_union (x:xs) (y:ys)
     | x == y = x:(increasing_union xs ys)
     | x < y = x:increasing_union xs (y:ys)
     | x > y = y:increasing_union (x:xs) ys
+
+greedy_complete :: [Integer] -> [Integer]
+greedy_complete (1:xs) = 1:_greedy_complete 1 xs
+greedy_complete xs = 1:_greedy_complete 1 xs
+
+_greedy_complete :: Integer -> [Integer] -> [Integer]
+_greedy_complete n (x:y:xs)
+    | y > n + 1 = x:_greedy_complete (n+x) (y:xs)
+    | otherwise = _greedy_complete n (y:xs)
