@@ -26,13 +26,13 @@ a003679 = check_a003679 naturals
 a075058 :: [Integer]
 a075058 = greedy_complete primes
 
-number_of_summands :: Integer -> [Integer] -> Integer
-number_of_summands x s = fromJust $ _number_of_summands [] x s
+number_of_summands :: [Integer] -> Integer -> Integer
+number_of_summands s x = fromJust $ _number_of_summands s x []
 
 _number_of_summands :: [Integer] -> Integer -> [Integer] -> Maybe Integer
 _number_of_summands _ 0 _ = Just 0
-_number_of_summands l x s
+_number_of_summands s x l
     | null values = Nothing
     | otherwise   = Just $ (+) 1 $ minimum values
-    where values = catMaybes $ map (\t -> _number_of_summands (t:l) (x-t) s) candidates
+    where values = catMaybes $ map (\t -> _number_of_summands s (x-t) (t:l)) candidates
           candidates = filter ((flip notElem) l) $ takeWhile (\y -> y <= x) s
