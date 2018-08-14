@@ -25,3 +25,18 @@ _greedy_complete :: Integer -> [Integer] -> [Integer]
 _greedy_complete n (x:y:xs)
     | y > n + 1 = x:_greedy_complete (n+x) (y:xs)
     | otherwise = _greedy_complete n (y:xs)
+
+record_values :: [Integer] -> [Integer]
+record_values s = map fst $ records s
+
+record_indices :: [Integer] -> [Integer]
+record_indices s = map snd $ records s
+
+records :: [Integer] -> [(Integer, Integer)]
+records (x:xs) = _records (x-1) $ zip (x:xs) [0..]
+
+_records :: Integer -> [(Integer, Integer)] -> [(Integer, Integer)]
+_records _ [] = []
+_records n ((a, b):xs)
+    | a > n     = (a, b): _records a xs
+    | otherwise = _records n xs
