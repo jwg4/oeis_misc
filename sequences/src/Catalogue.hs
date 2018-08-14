@@ -7,6 +7,7 @@ module Catalogue(
     a003679,
     a062515,
     a063008,
+    a075058,
     a117065,
     a126796,
     a179824,
@@ -31,6 +32,6 @@ import Morphism(a316343, a316344, a316345, a316824)
 import Number(a000040, a002110)
 import Partition(a062515, a063008, a126796, a236970, a236971, a236972, a316532)
 import Simple(a000326)
-import Summand(a003679)
+import Summand(a003679, a075058)
 import A117065(a117065)
 import A256535(a256535)
