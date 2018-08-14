@@ -1,5 +1,7 @@
 module Summand where
 
+import Data.Maybe (catMaybes, fromJust)
+
 import Basic(naturals)
 import Number(primes)
 import Simple(pentagonal_numbers)
@@ -23,3 +25,14 @@ a003679 = check_a003679 naturals
 
 a075058 :: [Integer]
 a075058 = greedy_complete primes
+
+number_of_summands :: Integer -> [Integer] -> Integer
+number_of_summands x s = fromJust $ _number_of_summands [] x s
+
+_number_of_summands :: [Integer] -> Integer -> [Integer] -> Maybe Integer
+_number_of_summands _ 0 _ = Just 0
+_number_of_summands l x s
+    | null values = Nothing
+    | otherwise   = Just $ (+) 1 $ minimum values
+    where values = catMaybes $ map (\t -> _number_of_summands (t:l) (x-t) s) candidates
+          candidates = filter ((flip notElem) l) $ takeWhile (\y -> y <= x) s

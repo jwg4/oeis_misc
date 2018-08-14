@@ -41,5 +41,5 @@ test-suite test
     , base
     , hspec
   other-modules:
-      NumberSpec, TransformSpec, CatalogueSpec, OutputSpec, BasicSpec, PartitionSpec, GraphSpec, MorphismSpec, ComplexSpec
+      NumberSpec, TransformSpec, CatalogueSpec, OutputSpec, BasicSpec, PartitionSpec, GraphSpec, MorphismSpec, ComplexSpec, SummandSpec
   default-language: Haskell2010
