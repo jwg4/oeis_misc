@@ -14,3 +14,7 @@ spec = do
     it "complete sequence of primes" $
           (number_of_summands a075058 19) `shouldBe` 4
 
+  describe "map number_of_summands" $ do
+    it "a075058" $
+        take 14 (map (number_of_summands a075058) [0..]) `shouldBe` [0, 1, 1, 1, 2, 2, 3, 1, 2, 2, 2, 3, 3, 1]
+
