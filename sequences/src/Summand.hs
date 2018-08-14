@@ -2,10 +2,10 @@ module Summand where
 
 import Data.Maybe (catMaybes, fromJust)
 
-import Basic(naturals)
+import Basic(naturals, numbers)
 import Number(primes)
 import Simple(pentagonal_numbers)
-import Transform(greedy_complete)
+import Transform(greedy_complete, record_indices)
 
 notSumOf :: Integer -> [Integer] -> [Integer] -> [Integer]
 notSumOf n summands = filter (not . isSumOf n summands)
@@ -36,3 +36,6 @@ _number_of_summands s x l
     | otherwise   = Just $ (+) 1 $ minimum values
     where values = catMaybes $ map (\t -> _number_of_summands s (x-t) (t:l)) candidates
           candidates = filter ((flip notElem) l) $ takeWhile (\y -> y <= x) s
+
+a202618 :: [Integer]
+a202618 = record_indices $ map (number_of_summands a075058) numbers

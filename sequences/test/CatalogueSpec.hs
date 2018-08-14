@@ -5,8 +5,8 @@ import Test.Hspec (Spec, it, shouldBe, describe, pending)
 import Catalogue (
     a000027, a000040, a000326, a001477, a002110,
     a003679, a062515, a063008, a075058, a117065,
-    a126796, a179824, a233694, a233695, a233696,
-    a236970, a236971, a236972, a256535,
+    a126796, a179824, a202618, a233694, a233695,
+    a233696, a236970, a236971, a236972, a256535,
     a316343, a316344, a316345, a316532, a316824
   )
 
@@ -75,6 +75,10 @@ spec = do
         atLeast 1 a179824
     it "values from OEIS" $
         check [2, 24, 108, 320] a179824
+
+  describe "a202618" $ do
+    it "values from OEIS" $
+        check [0, 1, 4, 6, 19, 42] a202618
 
   describe "a233694" $ do
     it "values from OEIS" $
