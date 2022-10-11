@@ -23,7 +23,14 @@ def a133912():
         c = j
 
 
+def a133914():
+    x = 0
+    for j in a133912():
+        x = x * 2 + j
+        yield x
+
+
 if __name__ == '__main__':
     from utils.output import data_section, truncate
 
-    print(data_section(truncate(a133912(), 300)))
+    print(data_section(truncate(a133914(), 300)))
