@@ -41,3 +41,12 @@ def data_section(values):
             break
         i = i + 1
     return ", ".join(ss[:i])
+
+
+def truncate(sequence, n):
+    c = 0
+    for i in sequence:
+        if c >= n:
+            return
+        yield i
+        c = c + 1
